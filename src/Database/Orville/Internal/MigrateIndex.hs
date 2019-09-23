@@ -25,6 +25,7 @@ createIndex conn (IndexDefinition {..}) = do
   let ddl = intercalate " " [ "CREATE"
                             , if indexUnique then "UNIQUE" else ""
                             , "INDEX"
+                            , if indexConcurrently then "CONCURRENTLY" else ""
                             , indexName
                             , "ON"
                             , "\"" ++ indexTable ++ "\""

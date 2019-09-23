@@ -222,6 +222,7 @@ type SchemaDefinition = [SchemaItem]
 data IndexDefinition = IndexDefinition {
     indexName :: String
   , indexUnique :: Bool
+  , indexConcurrently :: Bool
   , indexTable :: String
   , indexBody :: String
   } deriving (Eq, Show)
