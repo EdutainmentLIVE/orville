@@ -13,20 +13,22 @@ import            Data.List (intercalate)
 import            Database.Orville.Internal.FieldDefinition
 import            Database.Orville.Internal.Types
 
-uniqueIndex :: String -> TableDefinition entity -> [FieldDefinition] -> IndexDefinition
-uniqueIndex name tableDef fields =
+uniqueIndex :: String -> TableDefinition entity -> [FieldDefinition] -> Bool -> IndexDefinition
+uniqueIndex name tableDef fields concurrently =
   IndexDefinition {
     indexName = name
   , indexUnique = True
+  , indexConcurrently = concurrently
   , indexTable = tableName tableDef
   , indexBody = indexFieldsBody fields
   }
 
-simpleIndex :: String -> TableDefinition entity -> [FieldDefinition] -> IndexDefinition
-simpleIndex name tableDef fields =
+simpleIndex :: String -> TableDefinition entity -> [FieldDefinition] -> Bool -> IndexDefinition
+simpleIndex name tableDef fields concurrently =
   IndexDefinition {
     indexName = name
   , indexUnique = False
+  , indexConcurrently = concurrently
   , indexTable = tableName tableDef
   , indexBody = indexFieldsBody fields
   }

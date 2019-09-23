@@ -24,6 +24,7 @@ createIndex :: MonadOrville conn m => conn -> IndexDefinition -> m ()
 createIndex conn (IndexDefinition {..}) = do
   let ddl = intercalate " " [ "CREATE"
                             , if indexUnique then "UNIQUE" else ""
+                            , if indexConcurrently then "CONCURRENTLY" else ""
                             , "INDEX"
                             , indexName
                             , "ON"
