@@ -42,10 +42,7 @@ indexNameToString :: IndexName -> String
 indexNameToString (IndexName i) = i
 
 stringToIndexName :: String -> IndexName
-stringToIndexName name =
-  case safeStringToIndexName name of
-    Left err -> error err
-    Right iName -> iName
+stringToIndexName = either error id . safeStringToIndexName
 
 safeStringToIndexName :: String -> Either String IndexName
 safeStringToIndexName name =
