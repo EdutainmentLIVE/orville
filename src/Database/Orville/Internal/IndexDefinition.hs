@@ -47,6 +47,6 @@ stringToIndexName = either error id . safeStringToIndexName
 safeStringToIndexName :: String -> Either String IndexName
 safeStringToIndexName name =
   if length name > 63 then
-    Left "safeStringToIndexName: index name too long: " <> show name
+    Left $ "safeStringToIndexName: index name too long: " <> show name
   else
     Right $ IndexName name
