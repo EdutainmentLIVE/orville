@@ -5,12 +5,12 @@
 
 packages:
 - completed:
-    hackage: HDBC-postgresql-2.3.2.6@sha256:6e1636b0414ae7b028a01f1a90cf3e28c14f1df7867cf2615d5357d9abcd6279,3164
+    hackage: HDBC-postgresql-2.3.2.7@sha256:93d8e3c3d2dc9291a10f28ae3f8d0604a55ef47298ed43003a4d16f3d9905bae,3228
     pantry-tree:
       size: 1740
-      sha256: 447f1893e85d46f3f1c5e8b43ed46e4ff9563223c2ae0b6b78de624a9f0563c1
+      sha256: 07bfba988402849f447025b324f2993ea88ac0ec4f7dd4b86942644e2e239d45
   original:
-    hackage: HDBC-postgresql-2.3.2.6
+    hackage: HDBC-postgresql-2.3.2.7
 snapshots:
 - completed:
     size: 524127

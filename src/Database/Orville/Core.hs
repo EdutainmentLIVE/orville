@@ -33,7 +33,7 @@ module Database.Orville.Core
   , ColumnType (..)
   , FieldDefinition, withPrefix, fieldName
   , IndexDefinition (..)
-  , uniqueIndex, simpleIndex
+  , IndexName, uniqueIndex, simpleIndex, indexNameToString, stringToIndexName, safeStringToIndexName
 
   , ConstraintDefinition (..)
   , uniqueConstraint, dropConstraint
